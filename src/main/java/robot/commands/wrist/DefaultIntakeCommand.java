@@ -83,7 +83,7 @@ public class DefaultIntakeCommand extends TSafeCommand {
             // Check if Claw is at Mid
             if (intakePos==3){
                 Robot.wristSubsystem.clawDown();
-                Timer.delay(.4);
+                Timer.delay(-.4);
                 Robot.wristSubsystem.clawStop();
                 intakePos = 2;
 

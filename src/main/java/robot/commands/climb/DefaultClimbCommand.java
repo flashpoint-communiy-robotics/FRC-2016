@@ -3,7 +3,6 @@ package robot.commands.climb;
 import com.torontocodingcollective.TConst;
 import com.torontocodingcollective.commands.TSafeCommand;
 
-import edu.wpi.first.wpilibj.*;
 import robot.Robot;
 
 /**
