@@ -15,6 +15,7 @@ import robot.oi.OI;
 import robot.subsystems.PwmDriveSubsystem;
 import robot.subsystems.PowerSubsystem;
 import robot.subsystems.WristSubsystem;
+import robot.subsystems.ClimberSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,6 +31,7 @@ public class Robot extends IterativeRobot {
     public static final PwmDriveSubsystem   driveSubsystem      = new PwmDriveSubsystem();
     public static final PowerSubsystem      powerSubsystem      = new PowerSubsystem();
     public static final WristSubsystem      wristSubsystem      = new WristSubsystem();
+    public static final ClimberSubsystem      climbSubsystem      = new ClimberSubsystem();
 
     public static OI                        oi;
 
@@ -40,6 +42,7 @@ public class Robot extends IterativeRobot {
         subsystemLs.add(driveSubsystem);
         subsystemLs.add(powerSubsystem);
         subsystemLs.add(wristSubsystem);
+        subsystemLs.add(climbSubsystem);
     }
 
     /**

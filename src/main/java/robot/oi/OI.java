@@ -4,6 +4,7 @@ import com.torontocodingcollective.oi.TButton;
 import com.torontocodingcollective.oi.TGameController;
 import com.torontocodingcollective.oi.TGameController_Xbox;
 import com.torontocodingcollective.oi.TOi;
+import com.torontocodingcollective.oi.TPOVPressDetector;
 import com.torontocodingcollective.oi.TRumbleManager;
 import com.torontocodingcollective.oi.TStick;
 import com.torontocodingcollective.oi.TStickPosition;
@@ -42,7 +43,7 @@ public class OI extends TOi {
 
     @Override
     public boolean getCancelCommand() {
-        return driverController.getButton(TButton.BACK);
+        return driverController.getButton(TButton.Y);
     }
 
     @Override
@@ -105,6 +106,14 @@ public class OI extends TOi {
 		return driverController.getButton(TButton.B);
     }
     
+    public boolean climbUp() {
+		return driverController.getButton(TButton.START);
+    }
+
+    public boolean climbDown() {
+		return driverController.getButton(TButton.BACK);
+    }
+
     public void init() {
         speedPidToggle.set(false);
     }

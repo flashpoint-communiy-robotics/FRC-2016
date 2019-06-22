@@ -1,6 +1,7 @@
 package robot;
 
 import com.torontocodingcollective.TConst;
+import com.torontocodingcollective.speedcontroller.TCanSpeedController.TCanSpeedControllerType;
 import com.torontocodingcollective.speedcontroller.TPwmSpeedController.TPwmSpeedControllerType;
 
 /**
@@ -18,6 +19,12 @@ public class RobotMap {
     // Speed Controllers and encoders
     // CAN addresses
     // ******************************************
+
+    public static final int                     CLIMBER_SPEED_CONTROLLER_ADDRESS;
+    public static final TCanSpeedControllerType CLIMBER_SPEED_CONTROLLER_TYPE;
+    public static final int                     CLIMBER_FOLLOWER_SPEED_CONTROLLER_ADDRESS;
+    public static final TCanSpeedControllerType CLIMBER_FOLLOWER_SPEED_CONTROLLER_TYPE;
+    public static final boolean                 CLIMBER_MOTOR_ISINVERTED;
 
     // ******************************************
     // PWM addresses
@@ -71,6 +78,12 @@ public class RobotMap {
         default:
             // CAN Constants
             // Talon and Victor connected through the CAN Bu
+
+            CLIMBER_SPEED_CONTROLLER_ADDRESS           = 4;
+            CLIMBER_SPEED_CONTROLLER_TYPE              = TCanSpeedControllerType.TALON_SRX;
+            CLIMBER_FOLLOWER_SPEED_CONTROLLER_ADDRESS  = 5;
+            CLIMBER_FOLLOWER_SPEED_CONTROLLER_TYPE     = TCanSpeedControllerType.TALON_SRX;
+            CLIMBER_MOTOR_ISINVERTED                   = TConst.NOT_INVERTED;
 
             // PWM Constants
             // Talon and Victors connected through Pwm

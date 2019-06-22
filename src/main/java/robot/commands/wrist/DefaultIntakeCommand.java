@@ -4,8 +4,6 @@ import com.torontocodingcollective.TConst;
 import com.torontocodingcollective.commands.TSafeCommand;
 
 import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.command.TimedCommand;
-import edu.wpi.first.wpilibj.command.WaitCommand;
 import robot.Robot;
 
 /**
@@ -64,22 +62,40 @@ public class DefaultIntakeCommand extends TSafeCommand {
             Robot.wristSubsystem.stopIntake();
         }
         
+        // Claw Pos 1
         if(Robot.oi.clawUp()) {
-            if (intakePos!=1){
-            Robot.wristSubsystem.clawUp();
-            Timer.delay(.8);
-            Robot.wristSubsystem.clawStop();
-            intakePos = 1;
+            // Check if Claw is at Mid
+            if (intakePos==3){
+                Robot.wristSubsystem.clawUp();
+                Timer.delay(.4);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 1;
+            // Check if Claw is not at Pos 1
+            }else if(intakePos!=1){
+                Robot.wristSubsystem.clawUp();
+                Timer.delay(.8);
+                Robot.wristSubsystem.clawStop(); 
+                intakePos=1;    
             }
 
+        // Claw Pos 2
 		}else if (Robot.oi.clawDown()) {
-            if (intakePos!=2){
-            Robot.wristSubsystem.clawDown();
-            Timer.delay(.8);
-            Robot.wristSubsystem.clawStop();
-            intakePos = 2;
-            }
+            // Check if Claw is at Mid
+            if (intakePos==3){
+                Robot.wristSubsystem.clawDown();
+                Timer.delay(.4);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 2;
 
+            // Check if Claw is not at Pos 2
+            }else if(intakePos!=2){
+                Robot.wristSubsystem.clawDown();
+                Timer.delay(.8);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 2; 
+            }
+        
+        // Claw Pos 3
         }else if (Robot.oi.clawMid()) {
             if (intakePos!=3){
             Robot.wristSubsystem.clawDown();
