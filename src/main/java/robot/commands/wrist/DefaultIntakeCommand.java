@@ -61,7 +61,116 @@ public class DefaultIntakeCommand extends TSafeCommand {
 		}else {
             Robot.wristSubsystem.stopIntake();
         }
+
+
+        // Claw Code for Hatch
+
+        // Pos 1 - Claw Stowed
+        if(Robot.oi.clawUp()){
+            // Stowed Away
+            if (intakePos==1){
+                Robot.wristSubsystem.clawStop();
+            // Straight Up
+            }else if(intakePos==2){
+                Robot.wristSubsystem.clawUp();
+                Timer.delay(.1);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 1;
+            // Out Angle
+            }else if(intakePos==3){
+                Robot.wristSubsystem.clawUp();
+                Timer.delay(.4);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 1;
+            // Full Down
+            }else if(intakePos==4){
+                Robot.wristSubsystem.clawUp();
+                Timer.delay(.8);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 1;
+            }
         
+        // Pos 2 - Claw Straight Up
+        }else if(Robot.oi.clawStraight()){
+            // Stowed Away
+            if (intakePos==1){
+                Robot.wristSubsystem.clawDown();
+                Timer.delay(0.1);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 2;
+            // Straight Up
+            }else if(intakePos==2){
+                Robot.wristSubsystem.clawStop();
+            // Out Angle
+            }else if(intakePos==3){
+                Robot.wristSubsystem.clawUp();
+                Timer.delay(.3);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 2;
+            // Full Down
+            }else if(intakePos==4){
+                Robot.wristSubsystem.clawUp();
+                Timer.delay(.7);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 2;
+            }
+
+        // Pos 3 - Claw Mid
+        }else if(Robot.oi.clawMid()){
+            // Stowed Away
+            if (intakePos==1){
+                Robot.wristSubsystem.clawDown();
+                Timer.delay(0.4);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 3;
+            // Straight Up
+            }else if(intakePos==2){
+                Robot.wristSubsystem.clawDown();
+                Timer.delay(0.3);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 3;
+            // Out Angle
+            }else if(intakePos==3){
+                Robot.wristSubsystem.clawStop();
+            // Full Down
+            }else if(intakePos==4){
+                Robot.wristSubsystem.clawUp();
+                Timer.delay(.4);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 3;
+            }
+
+        // Pos 4 - Claw Down (Intake Position)
+        }else if(Robot.oi.clawUp()){
+            // Stowed Away
+            if (intakePos==1){
+                Robot.wristSubsystem.clawDown();
+                Timer.delay(0.8);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 4;
+            // Straight Up
+            }else if(intakePos==2){
+                Robot.wristSubsystem.clawDown();
+                Timer.delay(0.7);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 4;
+            // Out Angle
+            }else if(intakePos==3){
+                Robot.wristSubsystem.clawDown();
+                Timer.delay(0.4);
+                Robot.wristSubsystem.clawStop();
+                intakePos = 4;
+            // Full Down
+            }else if(intakePos==4){
+                Robot.wristSubsystem.clawStop();
+            }
+
+            // No Pos Movement Active
+        }else{
+            Robot.wristSubsystem.clawStop();
+        }
+
+        /**
         // Claw Pos 1
         if(Robot.oi.clawUp()) {
             // Check if Claw is at Mid
@@ -83,7 +192,7 @@ public class DefaultIntakeCommand extends TSafeCommand {
             // Check if Claw is at Mid
             if (intakePos==3){
                 Robot.wristSubsystem.clawDown();
-                Timer.delay(-.4);
+                Timer.delay(.4);
                 Robot.wristSubsystem.clawStop();
                 intakePos = 2;
 
@@ -97,18 +206,25 @@ public class DefaultIntakeCommand extends TSafeCommand {
         
         // Claw Pos 3
         }else if (Robot.oi.clawMid()) {
-            if (intakePos!=3){
+            if (intakePos==2){
             Robot.wristSubsystem.clawDown();
             Timer.delay(.4);
             Robot.wristSubsystem.clawStop();
             intakePos = 3;
             }
+        
+        // Claw Pos 4
+        }else if (Robot.oi.ClawStraight()){
+            if (intakePos!=4)
+        }
 
         }else{
             Robot.wristSubsystem.clawStop();
         }
 		
-	}
+
+    */
+    }
 
 	// Make this return true when this Command no longer needs to run execute()
 	@Override

@@ -19,9 +19,9 @@ public class WristSubsystem extends TSubsystem {
     TPwmSpeedController outerIntakeMotor = new TPwmSpeedController(
     		RobotMap.OUTER_SPEED_CONTROLLER_TYPE,RobotMap.OUTER_SPEED_CONTROLLER_ADDRESS, RobotMap.OUTER_MOTOR_ISINVERTED);
     TPwmSpeedController outerSideIntakeMotor = new TPwmSpeedController(
-            RobotMap.OUTER_FOLLOWER_SPEED_CONTROLLER_TYPE,RobotMap.OUTER_FOLLOWER_SPEED_CONTROLLER_ADDRESS, RobotMap.BITCH_MOTOR_ISINVERTED);
+            RobotMap.OUTER_FOLLOWER_SPEED_CONTROLLER_TYPE,RobotMap.OUTER_FOLLOWER_SPEED_CONTROLLER_ADDRESS, RobotMap.OUTER_MOTOR_ISINVERTED);
     TPwmSpeedController innerSideIntakeMotor = new TPwmSpeedController(
-            RobotMap.INNER_FOLLOWER_SPEED_CONTROLLER_TYPE,RobotMap.INNER_FOLLOWER_SPEED_CONTROLLER_ADDRESS, RobotMap.BITCH_MOTOR_ISINVERTED);
+            RobotMap.INNER_FOLLOWER_SPEED_CONTROLLER_TYPE,RobotMap.INNER_FOLLOWER_SPEED_CONTROLLER_ADDRESS, RobotMap.INNER_MOTOR_ISINVERTED);
         
 
 	TPwmSpeedController wristMotor = new TPwmSpeedController(
@@ -66,16 +66,6 @@ public class WristSubsystem extends TSubsystem {
     public void spinBall() {
         outerIntakeMotor.set(-1);
         outerSideIntakeMotor.set(-1);
-    }
-
-    public void poop(){
-        innerIntakeMotor.set(0.3);
-        innerSideIntakeMotor.set(0.3);
-    }
-
-    public void poopTwo(){
-        innerIntakeMotor.set(-0.3);
-        innerSideIntakeMotor.set(-0.3);
     }
 
     public void spitBall() {

@@ -51,13 +51,11 @@ public class RobotMap {
     public static final TPwmSpeedControllerType INNER_FOLLOWER_SPEED_CONTROLLER_TYPE;
     public static final boolean                 INNER_MOTOR_ISINVERTED;
 
-    public static final int                    OUTER_SPEED_CONTROLLER_ADDRESS;
+    public static final int                     OUTER_SPEED_CONTROLLER_ADDRESS;
     public static final TPwmSpeedControllerType OUTER_SPEED_CONTROLLER_TYPE;
     public static final int                     OUTER_FOLLOWER_SPEED_CONTROLLER_ADDRESS;
     public static final TPwmSpeedControllerType OUTER_FOLLOWER_SPEED_CONTROLLER_TYPE;
     public static final boolean                 OUTER_MOTOR_ISINVERTED;
-
-    public static final boolean                 BITCH_MOTOR_ISINVERTED;
 
     // ******************************************
     // Gyro Ports
@@ -77,16 +75,16 @@ public class RobotMap {
         case RobotConst.TEST_ROBOT:
         default:
             // CAN Constants
-            // Talon and Victor connected through the CAN Bu
+            // Talon and Victor connected through the CAN Bus
 
-            CLIMBER_SPEED_CONTROLLER_ADDRESS           = 4;
-            CLIMBER_SPEED_CONTROLLER_TYPE              = TCanSpeedControllerType.TALON_SRX;
-            CLIMBER_FOLLOWER_SPEED_CONTROLLER_ADDRESS  = 5;
-            CLIMBER_FOLLOWER_SPEED_CONTROLLER_TYPE     = TCanSpeedControllerType.TALON_SRX;
-            CLIMBER_MOTOR_ISINVERTED                   = TConst.NOT_INVERTED;
+            CLIMBER_SPEED_CONTROLLER_ADDRESS                  = 4;
+            CLIMBER_SPEED_CONTROLLER_TYPE                     = TCanSpeedControllerType.TALON_SRX;
+            CLIMBER_FOLLOWER_SPEED_CONTROLLER_ADDRESS         = 5;
+            CLIMBER_FOLLOWER_SPEED_CONTROLLER_TYPE            = TCanSpeedControllerType.TALON_SRX;
+            CLIMBER_MOTOR_ISINVERTED                          = TConst.NOT_INVERTED;
 
             // PWM Constants
-            // Talon and Victors connected through Pwm
+            // Talon and Victors connected through PWM
             LEFT_DRIVE_PWM_SPEED_CONTROLLER_ADDRESS           = 3;
             LEFT_DRIVE_PWM_SPEED_CONTROLLER_TYPE              = TPwmSpeedControllerType.VICTOR_SP;
             LEFT_DRIVE_PWM_FOLLOWER_SPEED_CONTROLLER_ADDRESS  = 4;
@@ -99,23 +97,21 @@ public class RobotMap {
             RIGHT_DRIVE_PWM_FOLLOWER_SPEED_CONTROLLER_TYPE    = TPwmSpeedControllerType.VICTOR_SP;
             RIGHT_DRIVE_PWM_MOTOR_ISINVERTED                  = TConst.INVERTED;
 
-            WRIST_SPEED_CONTROLLER_ADDRESS  = 5;
-            WRIST_SPEED_CONTROLLER_TYPE     = TPwmSpeedControllerType.VICTOR_SP;
-            WRIST_MOTOR_ISINVERTED          = TConst.NOT_INVERTED;
+            WRIST_SPEED_CONTROLLER_ADDRESS                    = 5;
+            WRIST_SPEED_CONTROLLER_TYPE                       = TPwmSpeedControllerType.VICTOR_SP;
+            WRIST_MOTOR_ISINVERTED                            = TConst.NOT_INVERTED;
 
-            INNER_SPEED_CONTROLLER_ADDRESS          = 8;
-            INNER_SPEED_CONTROLLER_TYPE             = TPwmSpeedControllerType.VICTOR_SP;
-            INNER_FOLLOWER_SPEED_CONTROLLER_ADDRESS = 9;
-            INNER_FOLLOWER_SPEED_CONTROLLER_TYPE    = TPwmSpeedControllerType.VICTOR_SP;
-            INNER_MOTOR_ISINVERTED                  = TConst.INVERTED;
+            INNER_SPEED_CONTROLLER_ADDRESS                    = 8;
+            INNER_SPEED_CONTROLLER_TYPE                       = TPwmSpeedControllerType.VICTOR_SP;
+            INNER_FOLLOWER_SPEED_CONTROLLER_ADDRESS           = 9;
+            INNER_FOLLOWER_SPEED_CONTROLLER_TYPE              = TPwmSpeedControllerType.VICTOR_SP;
+            INNER_MOTOR_ISINVERTED                            = TConst.INVERTED;
 
-            OUTER_SPEED_CONTROLLER_ADDRESS          = 6;
-            OUTER_SPEED_CONTROLLER_TYPE             = TPwmSpeedControllerType.VICTOR_SP;
-            OUTER_FOLLOWER_SPEED_CONTROLLER_ADDRESS          = 7;
-            OUTER_FOLLOWER_SPEED_CONTROLLER_TYPE             = TPwmSpeedControllerType.VICTOR_SP;
-            OUTER_MOTOR_ISINVERTED                  = TConst.INVERTED;
-
-            BITCH_MOTOR_ISINVERTED                  = TConst.NOT_INVERTED;
+            OUTER_SPEED_CONTROLLER_ADDRESS                    = 6;
+            OUTER_SPEED_CONTROLLER_TYPE                       = TPwmSpeedControllerType.VICTOR_SP;
+            OUTER_FOLLOWER_SPEED_CONTROLLER_ADDRESS           = 7;
+            OUTER_FOLLOWER_SPEED_CONTROLLER_TYPE              = TPwmSpeedControllerType.VICTOR_SP;
+            OUTER_MOTOR_ISINVERTED                            = TConst.INVERTED;
         }
     }
 }

@@ -90,8 +90,12 @@ public class OI extends TOi {
 		return driverController.getButton(TButton.LEFT_BUMPER);
     }
     
+    public boolean clawStraight() {
+    return driverController.getButton(TButton.X);
+    }
+
     public boolean clawMid() {
-		return driverController.getButton(TButton.X);
+		return driverController.getButton(TButton.A);
 	}
 
     public boolean ballIntake() {
