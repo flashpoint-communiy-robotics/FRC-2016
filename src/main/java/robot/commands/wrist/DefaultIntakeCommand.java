@@ -5,6 +5,7 @@ import com.torontocodingcollective.commands.TSafeCommand;
 
 import edu.wpi.first.wpilibj.*;
 import robot.Robot;
+import robot.subsystems.WristSubsystem;
 
 /**
  *
@@ -62,7 +63,14 @@ public class DefaultIntakeCommand extends TSafeCommand {
             Robot.wristSubsystem.stopIntake();
         }
 
-
+        if(Robot.oi.clawUp()){
+            Robot.wristSubsystem.clawUp();
+        }else if(Robot.oi.clawDown()){
+            Robot.wristSubsystem.clawDown();
+        }else{
+            Robot.wristSubsystem.clawStop();
+        }
+        /**
         // Claw Code for Hatch
 
         // Pos 1 - Claw Stowed
@@ -169,7 +177,7 @@ public class DefaultIntakeCommand extends TSafeCommand {
         }else{
             Robot.wristSubsystem.clawStop();
         }
-
+         */
         /**
         // Claw Pos 1
         if(Robot.oi.clawUp()) {

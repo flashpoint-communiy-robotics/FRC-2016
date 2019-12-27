@@ -45,7 +45,7 @@ public class DefaultClimbCommand extends TSafeCommand {
 	protected void execute() {
         
         
-
+		/**
     	if (Robot.oi.climbUp()) {
             Robot.climbSubsystem.climberIn();
         
@@ -55,7 +55,7 @@ public class DefaultClimbCommand extends TSafeCommand {
 		}else {
             Robot.climbSubsystem.stopClimbMachine();
         }
-		
+	*/	
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

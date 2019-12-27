@@ -109,14 +109,6 @@ public class OI extends TOi {
     public boolean ballShoot() {
 		return driverController.getButton(TButton.B);
     }
-    
-    public boolean climbUp() {
-		return driverController.getButton(TButton.START);
-    }
-
-    public boolean climbDown() {
-		return driverController.getButton(TButton.BACK);
-    }
 
     public void init() {
         speedPidToggle.set(false);

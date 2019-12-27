@@ -42,7 +42,7 @@ public class RobotMap {
     public static final boolean                 RIGHT_DRIVE_PWM_MOTOR_ISINVERTED;
 
     public static final int                     WRIST_SPEED_CONTROLLER_ADDRESS;
-    public static final TPwmSpeedControllerType WRIST_SPEED_CONTROLLER_TYPE;
+    public static final TCanSpeedControllerType WRIST_SPEED_CONTROLLER_TYPE;
     public static final boolean                 WRIST_MOTOR_ISINVERTED;
 
     public static final int                     INNER_SPEED_CONTROLLER_ADDRESS;
@@ -97,13 +97,13 @@ public class RobotMap {
             RIGHT_DRIVE_PWM_FOLLOWER_SPEED_CONTROLLER_TYPE    = TPwmSpeedControllerType.VICTOR_SP;
             RIGHT_DRIVE_PWM_MOTOR_ISINVERTED                  = TConst.INVERTED;
 
-            WRIST_SPEED_CONTROLLER_ADDRESS                    = 5;
-            WRIST_SPEED_CONTROLLER_TYPE                       = TPwmSpeedControllerType.VICTOR_SP;
+            WRIST_SPEED_CONTROLLER_ADDRESS                    = 13;
+            WRIST_SPEED_CONTROLLER_TYPE                       = TCanSpeedControllerType.TALON_SRX;
             WRIST_MOTOR_ISINVERTED                            = TConst.NOT_INVERTED;
 
-            INNER_SPEED_CONTROLLER_ADDRESS                    = 8;
+            INNER_SPEED_CONTROLLER_ADDRESS                    = 8;//
             INNER_SPEED_CONTROLLER_TYPE                       = TPwmSpeedControllerType.VICTOR_SP;
-            INNER_FOLLOWER_SPEED_CONTROLLER_ADDRESS           = 9;
+            INNER_FOLLOWER_SPEED_CONTROLLER_ADDRESS           = 9;//
             INNER_FOLLOWER_SPEED_CONTROLLER_TYPE              = TPwmSpeedControllerType.VICTOR_SP;
             INNER_MOTOR_ISINVERTED                            = TConst.INVERTED;
 

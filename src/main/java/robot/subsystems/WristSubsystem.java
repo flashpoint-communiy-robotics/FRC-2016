@@ -1,6 +1,7 @@
 package robot.subsystems;
 
 import com.torontocodingcollective.speedcontroller.TPwmSpeedController;
+import com.torontocodingcollective.speedcontroller.TCanSpeedController;
 import com.torontocodingcollective.subsystem.TSubsystem;
 
 import robot.RobotMap;
@@ -24,7 +25,7 @@ public class WristSubsystem extends TSubsystem {
             RobotMap.INNER_FOLLOWER_SPEED_CONTROLLER_TYPE,RobotMap.INNER_FOLLOWER_SPEED_CONTROLLER_ADDRESS, RobotMap.INNER_MOTOR_ISINVERTED);
         
 
-	TPwmSpeedController wristMotor = new TPwmSpeedController(
+	TCanSpeedController wristMotor = new TCanSpeedController(
     		RobotMap.WRIST_SPEED_CONTROLLER_TYPE,RobotMap.WRIST_SPEED_CONTROLLER_ADDRESS, RobotMap.WRIST_MOTOR_ISINVERTED);
 
     
@@ -41,14 +42,14 @@ public class WristSubsystem extends TSubsystem {
     	innerIntakeMotor.set(1);
         outerIntakeMotor.set(1);
         innerSideIntakeMotor.set(1);
-        outerSideIntakeMotor.set(1);
+        outerSideIntakeMotor.set(-1);
     }
 
     public void bkdIntake() {
     	innerIntakeMotor.set(-1);
         outerIntakeMotor.set(-1);
         innerSideIntakeMotor.set(-1);
-        outerSideIntakeMotor.set(-1);
+        outerSideIntakeMotor.set(1);
     }
     
     public void stopIntake() {
@@ -65,13 +66,13 @@ public class WristSubsystem extends TSubsystem {
 
     public void spinBall() {
         outerIntakeMotor.set(-1);
-        outerSideIntakeMotor.set(-1);
+        outerSideIntakeMotor.set(1);
     }
 
     public void spitBall() {
         outerIntakeMotor.set(-0.7);
         innerIntakeMotor.set(-0.7);
-        outerSideIntakeMotor.set(-0.7);
+        outerSideIntakeMotor.set(0.7);
         innerSideIntakeMotor.set(-0.7);
     }
 
